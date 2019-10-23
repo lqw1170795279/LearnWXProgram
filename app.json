@@ -5,8 +5,8 @@
     "pages/category/category"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#f0000f",
-    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#f0f0ff",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "你好",
     "backgroundColor": "#fff000",
     "backgroundTextStyle": "dark",
@@ -26,6 +26,12 @@
         "text": "阅读",
         "iconPath": "assets/tabBar/1.png",
         "selectedIconPath": "assets/tabBar/3.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "assets/tabBar/1.png",
+        "selectedIconPath": "assets/tabBar/4.png"
       }
     ]
   }
