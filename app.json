@@ -1,6 +1,32 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/about/about"
-  ]
+    "pages/about/about",
+    "pages/category/category"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#f0000f",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "你好",
+    "backgroundColor": "#fff000",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#f0000f",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/tabBar/1.png",
+        "selectedIconPath": "assets/tabBar/2.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "阅读",
+        "iconPath": "assets/tabBar/1.png",
+        "selectedIconPath": "assets/tabBar/3.png"
+      }
+    ]
+  }
 }
