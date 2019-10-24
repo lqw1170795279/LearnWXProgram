@@ -1,0 +1,22 @@
+.box{
+  color: antiquewhite;
+  font-size: 32px
+}
+.box1{
+  color: darkorange;
+  font-size: 32px
+}
+.box2{
+  color: lemonchiffon !important;
+  font-size: 32px
+}
+.box3{
+  background: sandybrown;
+  width: 100px;
+  height: 100px
+}
+.box4{
+  background: hotpink;
+  height: 200rpx;
+  width: 200rpx
+}

@@ -1,0 +1,6 @@
+@import "./style/btn.wxss";
+
+.global{
+  color: gainsboro;
+  font-size: 32px
+}
