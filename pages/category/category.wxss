@@ -1,1 +1,5 @@
 /* pages/category/category.wxss */
+input{
+  border: 1px solid red;
+  margin: 10px 30px;
+}

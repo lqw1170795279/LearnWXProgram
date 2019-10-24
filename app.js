@@ -25,12 +25,12 @@ App({
     }
 
     //2.获取用户信息,并将用户信息传递给服务器
-    wx.getUserInfo({
-      success:function(res)
-      {
-        console.log(res)
-      }
-    })
+    // wx.getUserInfo({
+    //   success:function(res)
+    //   {
+    //     console.log(res)
+    //   }
+    //})
   },
 
   /**

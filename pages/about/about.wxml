@@ -1,2 +1,19 @@
 <!--pages/about/about.wxml-->
-<view>关于</view>
+
+
+<!--基本使用-->
+<view class="box">内置组件</view>
+<view hover-class="aa">aa</view>
+<view class="bb" 
+      hover-class="hover-view"
+      hover-stay-time="1000">bb</view>
+
+<!--hover-stop-propagation：阻止祖先组件的点击态-->
+<view class="cc1" hover-class="cc1-hover">
+<view class="cc2"
+      hover-class="cc2-hover"
+      hover-stop-propagation>cc</view>
+</view>
+
+
+

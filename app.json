@@ -2,7 +2,10 @@
   "pages": [
     "pages/home/home",
     "pages/about/about",
-    "pages/category/category"
+    "pages/category/category",
+    "pages/button/button",
+    "pages/image/image"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#f0f0ff",
@@ -23,16 +26,29 @@
       },
       {
         "pagePath": "pages/category/category",
-        "text": "阅读",
+        "text": "文本/输入",
         "iconPath": "assets/tabBar/1.png",
         "selectedIconPath": "assets/tabBar/3.png"
       },
       {
         "pagePath": "pages/about/about",
-        "text": "关于",
+        "text": "内置组件",
         "iconPath": "assets/tabBar/1.png",
         "selectedIconPath": "assets/tabBar/4.png"
+      },
+      {
+        "pagePath": "pages/button/button",
+        "text": "按钮/scroll",
+        "iconPath": "assets/tabBar/1.png",
+        "selectedIconPath": "assets/tabBar/5.png"
+      },
+      {
+        "pagePath": "pages/image/image",
+        "text": "图片",
+        "iconPath": "assets/tabBar/1.png",
+        "selectedIconPath": "assets/tabBar/6.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap52.json"
 }

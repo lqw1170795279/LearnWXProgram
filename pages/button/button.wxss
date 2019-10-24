@@ -1,0 +1,40 @@
+/* pages/button/button.wxss */
+.pressed{
+  background: rebeccapurple;
+  color: wheat
+}
+.container1{
+  background: thistle;
+  /* 不换行 */
+  white-space: nowrap
+}
+.item1{
+  width: 100px;
+  height: 100px;
+  background: red;
+  margin: 10px;
+  /* 水平显示 */
+  display: inline-block
+}
+.container2{
+  background: wheat;
+  /* 垂直滚动要设置容器的大小 */
+  height: 200px;
+  margin-top: 1px;
+}
+.item2{
+  height: 100px;
+  background: palegreen;
+  margin: 10px
+}
+.container3{
+  background: rgb(9, 159, 179);
+  /* 垂直滚动要设置容器的大小 */
+  height: 200px;
+  margin-top: 1px;
+}
+.item3{
+  height: 100px;
+  background: rgb(161, 14, 161);
+  margin: 10px
+}

@@ -1,2 +1,33 @@
 <!--pages/category/category.wxml-->
-<text>阅读</text>
+<!--selectable默认情况下Text文本长按是不能选中的-->
+<text selectable>试试能选中我吗\n</text>
+
+<!--字体空格间距-->
+<text space="nbsp">阅 hell\n</text>
+<text space="ensp">阅 hell\n</text>
+<text space="emsp">阅 hell\n</text>
+<text >阅 hell\n</text>
+
+<!--是否解码文本-->
+<text decode> 5 &gt; 3</text>
+
+<!-- 1.input的基本使用 -->
+
+<input></input>
+
+<!-- 2.input 中的默认值 -->
+<input value="iii"></input>
+
+<!-- 3.type : 弹出键盘类型(文本text/身份证idcard/数字number/带小数点digit) -->
+<input type="idcard"></input>
+
+<!-- 4.password:暗文 -->
+<input password></input>
+
+<!-- 5.placeholder:占位文字 -->
+<input placeholder="请输入内容"></input>
+
+<!-- 6.input绑定事件 -->
+<input bindinput="hanleInput"
+       bindfocus="handleFocus"
+       bindblur="handleBlur"></input>

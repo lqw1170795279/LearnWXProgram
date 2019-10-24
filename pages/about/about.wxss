@@ -1,1 +1,37 @@
 /* pages/about/about.wxss */
+.box{
+  background: red
+}
+.aa{
+  background: rebeccapurple;
+  width: 100px;
+  height: 100px;
+  
+}
+.bb{
+  width: 100px;
+  height: 100px;
+  background: yellowgreen
+}
+.hover-view{
+  font-size: 30px;
+  background: pink;
+}
+.cc1{
+  width: 200px;
+  height: 200px;
+  background: purple
+}
+.cc1-hover{
+  font-size: 30px;
+  background: orange
+}
+.cc2{
+  width: 100px;
+  height: 100px;
+  background: blue;
+  margin-top: 20px;
+}
+.cc2-hover{
+  background: khaki
+}

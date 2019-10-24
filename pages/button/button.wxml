@@ -1,0 +1,40 @@
+<!--pages/button/button.wxml-->
+<button>按钮</button>
+
+<!--size-->
+<button size="mini">按钮</button>
+
+<!--type-->
+<button size="mini" type="primary">按钮</button>
+<button size="mini" type="default">按钮</button>
+<button size="mini" type="warn">按钮</button>
+
+<!--plain:镂空-->
+<button size="mini" plain>按钮</button>
+
+<!--disable-->
+<button size="mini" disabled>按钮</button>
+
+<!--loading-->
+<button size="mini" loading="{{isLoading}}">按钮</button>
+
+<!--hover-class-->
+<button size="mini" hover-class='pressed'>按钮</button>
+
+<!-- 1.水平滚动：scroll-x -->
+<!-- view是块级元素,会独占一行,可以通过display设置inline-block改变 -->
+<scroll-view class="container1" scroll-x>
+  <view wx:for="{{10}}" wx:key="key" class="item1">{{item}}</view>
+</scroll-view>
+
+<!-- 2.垂直滚动 -->
+<scroll-view class="container2" scroll-y>
+  <view wx:for="{{10}}" wx:key="key" class="item2">{{item}}</view>
+</scroll-view>
+
+<!-- 3.滚动位置 -->
+  
+<scroll-view class="container3" scroll-y bindscroll="handleScroll">
+  <view wx:for="{{10}}" wx:key="key" class="item3">{{item}}</view>
+</scroll-view>
+
