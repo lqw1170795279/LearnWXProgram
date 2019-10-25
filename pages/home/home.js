@@ -5,62 +5,64 @@ Page({
    * 页面的初始数据
    */
   data: {
+    titles:['衣服','裤子','帽子']
+  },
+  handleBtnClick(){
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleTouchStart(){
+    console.log('handleTouchStart')
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleTouchMove() {
+    console.log('handleTouchMove')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleTouchEnd() {
+    console.log('handleTouchEnd')
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleTap() {
+    console.log('handleTap')
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleLongPress() {
+    console.log('handleLongPress')
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  handleEventClick(event){
+    console.log('-------',event)
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handleOuter(event){
+    console.log(event)
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleInner(event){
+    console.log(event)
+  },
+  handleItem(event){
+    //获取item和index
+    //console.log(event)
+    const dataset = event.currentTarget.dataset;
+    const title = dataset.item;
+    const index = dataset.index;
+    console.log(title,index)
+  },
+  handleCaptureBig(){
+    console.log('handleCaptureBig')
+  },
+  handleCaptureMid() {
+    console.log('handleCaptureMid')
+  },
+  handleCaptureMini() {
+    console.log('handleCaptureMini')
+  },
+  handBindBig() {
+    console.log('handBindBig')
+  },
+  handBindMid() {
+    console.log('handBindMid')
+  },
+  handBindMini() {
+    console.log('handBindMini')
   }
 })
+// type:事件类型 timeStamp:时间戳,经历了多久 target:产生事件的对象的组件的属性 currentTarget:也包含产生事件的对象的属性 detail:点击位置距离页面左上角的距离坐标 touches:记录触摸点的信息 changeTouches:记录所有的手指触摸点
+//touches:记录有几根手指在触摸
+//chengeTouches:记录增加的或减少的手指数
+//currentTarget:记录触发事件的view
+//target:记录产生事件的view

@@ -1,5 +1,38 @@
 /* pages/home/home.wxss */
-.title{
-  color:red;
-  font-size: 30px;
+.view{
+  height: 200rpx;
+  width: 200rpx;
+  background: lightgoldenrodyellow;
+}
+.outter{
+  height: 400rpx;
+  width: 400rpx;
+  background: sandybrown;
+}
+.inner{
+  height: 180rpx;
+  width: 180rpx;
+  background: gold;
+}
+.contenter{
+  display: flex;
+}
+.item{
+  flex: 1;
+  text-align: center;
+}
+.big{
+  height: 600rpx;
+  width: 600rpx;
+  background: bisque;
+}
+.mid{
+  height: 400rpx;
+  width: 400rpx;
+  background:rgb(228, 241, 107);
+}
+.mini{
+  height: 200rpx;
+  width: 200rpx;
+  background: rgb(233, 229, 10);
 }

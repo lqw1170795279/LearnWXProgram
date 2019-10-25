@@ -1,3 +1,50 @@
 <!--pages/home/home.wxml-->
-<text class="title">HelloWorld!</text>
-<button size="mini">按钮</button>
+
+<!-- 1.事件处理 -->
+<button size="mini" bindtap="handleBtnClick">按钮</button>
+<button size="mini" bind:tap="handleBtnClick">按钮</button>
+<button size="mini" catch:tap="handleBtnClick">按钮</button>
+
+<!-- 2.常见的一些事件 -->
+<!-- tap和longpress只会触发一个 -->
+<view class="view"
+      bind:touchstart="handleTouchStart"
+      bind:touchmove="handleTouchMove"
+      bind:touchend="handleTouchEnd"
+      bind:tap="handleTap"
+      bind:longpress="handleLongPress"></view>
+
+<!-- 3.事件对象的分析 -->
+<button id="btn" size="mini" bind:tap="handleEventClick">事件对象</button>
+
+<view id ="outter" 
+      class="outter" 
+      bind:tap="handleOuter">
+  <view id = "inner"
+        class="inner" 
+        bind:tap="handleInner"></view>
+</view>
+
+<!-- 4.事件的传递参数 -->
+<view class="contenter">
+  <block wx:for="{{titles}}" wx:key="{{index}}">
+    <view class="item" 
+          bindtap="handleItem"
+          data-index="{{index}}"
+          data-item="{{item}}">{{item}}</view>
+  </block>
+</view>
+
+<!-- 事件捕获：由外到内,事件冒泡:由内到外 -->
+<!-- bind：会一层一层传递 -->
+<!-- catch：会阻止事件进一步传递 -->
+<view class="big" capture-bind:tap="handleCaptureBig" 
+      bindtap="handBindBig">
+  <view class="mid" capture-bind:tap="handleCaptureMid"      
+        bindtap="handBindMid">
+    <view class="mini"capture-bind:tap="handleCaptureMini" 
+          bindtap="handBindMini">
+    
+    </view>
+  </view>
+</view>
