@@ -1,0 +1,118 @@
+<!--pages/wxml/wxml.wxml-->
+<!--1. wxml格式 -->
+<!-- 一般有开头有结尾,且大小写有严格限定 -->
+
+<!-- 2. Mustache语法 -->
+<!-- 2.1绑定数据 -->
+<view>{{mustache}}</view>
+<view>{{firstName}} {{lastName}}</view>
+<view>{{firstName +' ' + lastName}}</view>
+<view>{{age >= 18 ? "成年人":"未成年人"}}</view>
+<!-- 播报实时时间 -->
+<view>{{nowTime}}</view>
+
+<!-- 2.2绑定类名 -->
+<view class='box {{isChange ? "active" : ""}}'>小猫</view>
+<button size="mini" bindtap="handleClick">改变小猫的颜色</button>
+
+<view>-----------条件判断----------</view>
+<!-- wx:if的使用 -->
+<view wx:if="{{isShow}}">小猫</view>
+<button size="mini" bindtap="handleSwitchShow">是否显示</button>
+
+<!-- wx:elif/wx:else -->
+<view>我的分数:{{score}}</view>
+<view>我的成绩：</view>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else="{{score < 60}}">不及格</view>
+
+<button size="mini" bindtap="handleIncrement">分数增加10</button>
+<button size="mini" bindtap="handleReduce">分数减少10</button>
+
+<view>-------hidden------</view>
+<!-- hidden 属性-->
+<view hidden="{{true}}">隐藏的小花猫</view>
+<view hidden="{{false}}">隐藏的小白猫</view>
+<!-- wx:if和hidden在隐藏时候的区别 -->
+<view wx:if="{{false}}">隐藏的小花狗</view>
+<view wx:if="{{true}}">隐藏的小白狗</view>
+<!-- hidden是渲染了不可见,wx:if是未渲染 -->
+<!-- 如果显示/隐藏的切换次数频繁,用hidden,其他情况可以用wx:if -->
+
+<view>----------列表渲染----------</view>
+<!-- 1.wx:for  遍历/数组/字符串/数字-->
+
+<!-- item 是用于遍历的中间变量 index是索引值-->
+
+<view wx:for="{{['asc','wer','rty']}}" wx:key="key">数组：\n{{item}} {{index}}</view>
+<view wx:for="Laiqinwei" wx:key="key">字符串：\n{{item}} {{index}}</view>
+<view wx:for="{{9}}" wx:key="key">数字：\n{{item}} {{index}}</view>
+
+<!-- 2.block标签 -->
+<view>-----------block标签-----------</view>
+<block wx:for="{{3}}" wx:key="key">
+  <button>按钮</button>
+  <text>文本</text>
+  <view>view</view>
+</block>
+<!-- 也可以用<view>标签代替<block>,但是<view>会渲染出来,相当于多出了一个块级元素,二<block>只是一个标签,作用是将标签里的内容打包,并不会进行渲染,可以提高性能 -->
+<!-- block只接收控制属性如 wx:if wx:for 等,它仅仅是一个包装元素,而不是组件 -->
+<!-- block的优点
+     1.减少重复代码,提高代码可读性高
+     2.能将要进行判断或遍历的内容进行包裹 -->
+
+<!-- 3.item index起名字 -->
+<view wx:for="{{movies}}" 
+      wx:key="key" 
+      wx:for-item="movie"
+      wx:for-index="i">
+      {{movie}} {{i}}</view>
+
+<!-- 多层遍历 -->
+<block wx:for="{{nums}}" wx:key="key"
+       wx:for-item="colum"
+       wx:for-index="col">
+       <view wx:for="{{colum}}"       
+             wx:key="key"
+             wx:for-item="num"
+             wx:for-index="raw">
+             数字：{{num}}->
+             在第{{col + 1}}行，第{{raw + 1}}列</view>
+       </block>
+
+<view>----------template 模板-----------</view>
+<!-- <template name="contentItem">
+<button size="mini">{{btnText}}</button>
+<view>{{content}}</view>
+</template> -->
+<import src="./template.wxml"/>
+<import src="./test.wxml"/>
+<!-- 模板通过name进行标识,在没调用前,模板不会进行渲染 -->
+<template is ="contentItem" data="{{btnText : '按钮1',content:'小猫'}}"/>
+<template is ="contentItem" data="{{btnText : '按钮2',content:'小狗'}}"/>
+
+<template is="test"/>
+<!-- 模板不能递归导入 -->
+<!-- include不能导入模板 -->
+<!-- include 可以将目标文件中除了<template/><wxs/>外的代码引入,相当于把代码拷贝到include的位置 -->
+<!-- include的用法 -->
+<!-- 1.可以的把样式相同的页面抽取到相应的wxml中,提高代码的复用性,要用时可通过在相应的位置加上
+<include src="pages/wxml/xx.wxml"/> 
+进行导入-->
+<!-- include可以递归导入 -->
+<view>------------include的用法-------------</view>
+<!-- <include src="./header.wxml"/>中引入了<include src="./nav.wxml"/> -->
+<include src="./header.wxml"/>
+<include src="./footer.wxml"/>
+
+
+<!-- 总结
+ wxml的导入方式有两种
+ import导入：
+    1.主要是导入template
+    2.不能进行递归导入
+ include引入：
+    1.将公共的wxml中的组件抽取到一个文件中
+    2.不能导入template/wxs,可以进行递归导入 -->
