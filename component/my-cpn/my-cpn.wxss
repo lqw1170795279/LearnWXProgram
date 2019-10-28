@@ -1,0 +1,10 @@
+/* component/my-cpn/my-cpn.wxss */
+
+.title{
+  font-size: 60rpx;
+  
+}
+.contenter{
+  height: 400rpx;
+  background: violet;
+}

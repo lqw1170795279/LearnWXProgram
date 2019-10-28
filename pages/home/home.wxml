@@ -1,3 +1,164 @@
 <!--pages/home/home.wxml-->
-<text class="title">HelloWorld!</text>
-<button size="mini">按钮</button>
+
+
+<!-- 1.自定义组件基本使用 -->
+<!-- <my-cpn></my-cpn>
+<my-cpn/>
+<view class='title'>主页</view> -->
+
+
+<!-- 2.自定义组件的样式 -->
+<!-- 在使用类选择器,自定义组件中的样式设置不会对其他页面产生影响 -->
+<!-- 自定义组件内不能使用id选择器 属性选择器 标签选择器 -->
+
+<!-- 外部样式对自定义组件样式的影响 -->
+<!-- 1.使用class的无影响 -->
+<!-- 2.使用id 属性选择器的无影响 -->
+<!-- 3.使用标签选择器的会对自定义组件产生影响 -->
+
+<!-- 结论：优先使用class选择器 -->
+
+<!-- 可以设置自定义组件和网页之间是否会相互影响 -->
+<!--
+  component({
+    options:{
+      styleIsolation:"isoated" 表示启用样式隔离,不会相互产生影响
+                      "apply-shared" 网页会对自定义组件产生影响,在网页.js处设置
+                      "shared" 自定义组件会对网页产生影响,在自定义组件.js处设置
+    }
+  })
+ -->
+
+<!-- 4.1组件和页面通信 -->
+ <!-- 页面--》组件传递数据用：properties  
+                     样式用：externalClasses  
+                     标签用slot 
+                     组件--》页面可以传递自定义事件>
+<!-- my-prop -->
+<!-- properties -->
+<my-prop title="标题1" 
+         titlecolor="red"
+         content="内容1"/>
+<my-prop title="标题2"
+         titlecolor='yellow'
+         content="内容2"/>
+<my-prop titlecolor='blue'
+         content="内容3"/>
+
+
+<!-- 4.2自定义组件事件 -->
+<!-- 
+my-event.wxml
+        <button size="mini" bindtap="handleIncrement">+1</button>
+my-event.js 
+        methods: {
+        handleIncrement(){
+        //将组件的事件发送到要同步的界面
+        this.triggerEvent('increment',{},{})
+        } 
+home.wxml
+        <my-event bind:increment="handleIncrement"/>
+home.js
+        handleIncrement(){
+        this.setData({
+        counter: this.data.counter + 1
+    })
+  }-->
+<view>当前计数：{{counter}}</view>
+<my-event bind:increment="handleIncrement"/>
+
+<!-- 5.tab-control练习 -->
+<w-tab-control titles="{{['衣服','裤子','鞋子']}}"
+               bind:itemClick="handleTabClick"/>
+
+
+<!-- 6.直接选中组件修改数据/调用方法 -->
+<my-sel id="sel-id"/>
+<button size="mini" bindtap="handleIncrementCpn">修改组件内的数据</button>
+
+<!-- 7.slot 扩展模块 堆积木,留有余地,想什么功能直接换-->
+<!-- 7.1单个插槽的使用 -->
+<view>--------------------------</view>
+<my-slot>
+  <button size="mini">插入的按钮</button>
+</my-slot>
+<view>--------------------------</view>
+<my-slot>
+  <text>插入的文件</text>
+</my-slot>
+<view>--------------------------</view>
+<my-slot>
+  <slider value="50"></slider>
+</my-slot>
+<view>--------------------------</view>
+
+<!-- 7.2多个插槽的使用 -->
+<!-- 
+注意事项：
+  1.给每个插槽起个名字,便于区分
+  2.必须在component对象中添加一个options->miltipleSlot: true
+ -->
+<my-mulslot>
+  <button size="mini" slot="slot2">第一个插入的组件</button>
+  <slider slot="slot3"></slider>
+</my-mulslot>
+
+<!-- 8.component构造器 -->
+<!-- 可以传入的东西
+     //1.让使用者给组件传入数据
+     properties：{
+      title: String
+      value: ''
+     //2.定义组件内部初始化数据
+     data: {
+     
+     }
+     //3.定义组件内部的函数
+     methoods:{
+      foo(){
+      }
+     }
+     //4.定义组件的内部选项
+     options{
+      multipleSlots:在用多插槽时要设置为true
+      styleIsolation:设置样式隔离的方式
+     }
+     //5.外界给组件传入额外的样式
+     externalClasses:[]
+     //6.可以监听内部数据变化
+        observers:{
+          counter:function(newVal)
+            console.log('')
+        }
+     //7.组件中监听生命周期函数
+     7.1监听所在页面的生命周期
+     pageLifetimes:{
+        show(){
+          console.log('组件所在页面显示出来时')
+        },
+        hide(){
+          console.log('组件所在页面隐藏起来时')
+        },
+        resize(){
+          console.log('组件所在页面尺寸改变时')
+        }
+     }
+     7.2监听插件的生命周期
+     lifetimes:{
+        movied(){
+          console.log('组件移动')
+        },
+        created(){
+          console.log('组件被创建')
+        },
+        ready(){
+          console.log('组件被渲染')
+        },
+        atached(){
+          console.log('组件被添加')
+        },
+        detached(){
+          console.log('组件被移除')
+        }
+      }
+     } -->

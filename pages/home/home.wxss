@@ -1,5 +1,10 @@
 /* pages/home/home.wxss */
-.title{
-  color:red;
-  font-size: 30px;
+.red{
+  color: red;
+}
+.yellow{
+  color: yellow;
+}
+.blue{
+  color: blue;
 }

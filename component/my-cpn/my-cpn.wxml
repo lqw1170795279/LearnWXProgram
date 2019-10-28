@@ -1,0 +1,7 @@
+<!--component/my-cpn/my-cpn.wxml-->
+
+<view class='title'>标题</view>
+<view class="'contenter'">内容</view>
+<!-- 自定义组件中还可以引用其他自定义组件 -->
+<!-- 自定义组件不能以 wx- 为前缀 -->
+<test-cpn/>

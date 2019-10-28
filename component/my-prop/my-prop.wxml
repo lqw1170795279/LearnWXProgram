@@ -1,0 +1,3 @@
+<!--component/my-prop/my-prop.wxml-->
+<view class='title titlecolor'>{{title}}</view>
+<view class="content">{{content}}</view>

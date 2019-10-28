@@ -1,0 +1,5 @@
+/* component/test-cpn/test-cpn.wxss */
+.box{
+  height: 100rpx;
+  background: sandybrown;
+}
