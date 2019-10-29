@@ -1,3 +1,15 @@
 <!--pages/home/home.wxml-->
-<text class="title">HelloWorld!</text>
-<button size="mini">按钮</button>
+
+<!-- 1.Toast弹窗 -->
+
+<button size="mini" bindtap="showToast">showToast</button>
+
+
+<!-- 2.Modal弹窗 -->
+<button size="mini" bindtap="showModal">showModal</button>
+
+<!-- 3.loading弹窗 -->
+<button size="mini" bindtap="showLoading">showLoading</button>
+
+<!-- 4.ActionSheet弹窗 -->
+<button size="mini" bindtap="showActionSheet">showActinoSheet</button>
