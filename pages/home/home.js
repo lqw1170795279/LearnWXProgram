@@ -53,5 +53,14 @@ Page({
         console.log(res.errMsg)
       }
     })
+  },
+  onShareAppMessage: function(options){
+    return{
+      title: 'share',
+      //打开分享的界面
+      path: '/pages/about/about',
+      imageUrl: 'https://b-ssl.duitang.com/uploads/item/201708/09/20170809134340_VyQvF.jpeg'
+
+    }
   }
 })

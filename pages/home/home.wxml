@@ -13,3 +13,6 @@
 
 <!-- 4.ActionSheet弹窗 -->
 <button size="mini" bindtap="showActionSheet">showActinoSheet</button>
+
+<!-- 5.分享按钮 -->
+<button size="mini" open-type="share">分享</button>
