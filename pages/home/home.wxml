@@ -1,3 +1,28 @@
 <!--pages/home/home.wxml-->
 <text class="title">HelloWorld!</text>
 <button size="mini">按钮</button>
+
+<!-- 1.navigator页面跳转 -->
+<navigator url='/pages/about/about' open-type="navigate">有去有回navigate,但不能跳tabbar</navigator>
+
+<!-- navigator属性：open-type-->
+<!-- 每个open-type都对应一个api -->
+<navigator url='/pages/test/test' open-type="switchTab">有去有会switchTab,只能挑tabbar</navigator>
+
+
+<navigator url='/pages/about/about' open-type="redirect">有去无回redirect,且不能选择tabbar页面</navigator>
+
+
+<navigator url='/pages/about/about' open-type="reLaunch">有去无回reLaunch,非tabbar页面</navigator>
+
+<navigator url='/pages/test/test' open-type="reLaunch">有去无回reLaunch,tabbar页面</navigator>
+
+<!-- 2.跳转过程中数据传递 -->
+<view>----------------数据传递--------------------</view>
+<!-- 首页到目标页 -->
+<navigator url="/pages/about/about?name=lqw&age=25&height=1.7">数据传递</navigator>
+<!-- 目标页到首页 -->
+<view>{{title}}</view>
+
+<!-- 3.代码方式跳转 -->
+<button size="mini" bindtap="handlePushAbout">跳转到about</button>

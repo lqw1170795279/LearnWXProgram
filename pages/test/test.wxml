@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<navigator url='/pages/home/home' open-type="switchTab">返回</navigator>
+
