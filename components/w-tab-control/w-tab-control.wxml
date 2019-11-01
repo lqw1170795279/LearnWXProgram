@@ -1,0 +1,13 @@
+<!--component/w-tab-control/w-tab-control.wxml-->
+<view class="tab-control">
+ <block wx:for="{{titles}}" wx:key="{{index}}">
+ <!-- currentIndex == index ? "active":""---下标与预定要变色的下标号进行三目运算
+      bindtap="handleItemClick"----获取点击事件
+      data-index="{{index}}"----获取点击的下标 -->
+  <view class='tab-item {{currentIndex == index ? "active":""}}'
+  bindtap="handleItemClick"
+  data-index="{{index}}">
+  <text>{{item}}</text>
+  </view>
+ </block>
+</view>
